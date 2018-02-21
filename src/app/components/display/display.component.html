@@ -1,3 +1,5 @@
-<p>
-  display works!
-</p>
+<div class = "card">
+<img src="{{data.url}}">
+  <input type = "text" name = "username" id = "username" placeholder="Username">
+  <button type = "submit" class = "btn btn-success" [disabled]="input.invalid">Save</button>
+</div>

@@ -1,3 +1,22 @@
-<p>
-  search works!
-</p>
+<form #searchGIFForm = "ngForm" (ngSubmit) = "search()">
+
+  <div class = "form-group">
+
+    <label for="search" >Search GIFs here</label>
+
+    <input type="text" name = "search" id = "search" required class = "form-control" placeholder = "Search GIFs..." ngModel>   <!-- [(ngModel)]="property" -->
+
+    <button type="submit" class = "btn btn-success form-control" [disabled]="searchGIFForm.invalid">Search</button>
+
+  </div>
+
+</form>
+
+<div class = "card" *ngFor="let gif of gifData">
+
+    <img src="{{gif.images.downsized.url}}">
+    <input type = "text" name = "username" id = "username" placeholder="Username">
+    <button type = "submit" class = "btn btn-success" [disabled]="input.invalid">Save</button>
+
+</div>
+
