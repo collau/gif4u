@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: '', component: SearchComponent },
   { path: 'search', component: SearchComponent },
   { path: 'gif4u_web/gif4u', component: UserComponent },
+  { path: 'gif4u_web/gif4u/**', component: UserComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
 
