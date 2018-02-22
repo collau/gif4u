@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,14 @@ import { DisplayComponent } from './components/display/display.component';
 import { GifsComponent } from './components/gifs.component';
 import { Gif4uService } from '../../gif4u.service';
 import { UserComponent } from './components/user/user.component';
+import { HeaderComponent } from './components/header/header.component';
+
+const routes: Routes = [
+  { path: '', component: SearchComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'gif4u_web/gif4u', component: UserComponent },
+  { path: '**', redirectTo: '/', pathMatch: 'full'}
+];
 
 
 @NgModule({
@@ -19,14 +28,16 @@ import { UserComponent } from './components/user/user.component';
     SearchComponent,
     DisplayComponent,
     GifsComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [ Gif4uService ],
   bootstrap: [AppComponent]
