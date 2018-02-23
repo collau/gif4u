@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Injectable, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Injectable, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Search} from './search';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
@@ -17,9 +17,15 @@ export class SearchComponent implements OnInit {
   @ViewChild('searchGIFForm')
   searchGIFForm: NgForm;
 
+  @Output()
+  pageChange: EventEmitter<number> = new EventEmitter<number>();
+
   private apiURL = 'http://api.giphy.com/v1/gifs/search?api_key=Kf4yZpbunyjW6DWn3632kA71xib2z74c&q=';
   gifData = [];
   http: Http;
+
+  page = 1;
+
 
   constructor( http: Http ) { this.http = http; }
 
@@ -37,7 +43,13 @@ export class SearchComponent implements OnInit {
       console.log(this.gifData);
 
     });
+
     }
+
+  pageChanged(n: number): void {
+    this.page = n;
+  }
+
 
   addGIFToDatabase (saveGIF: HTMLInputElement, gifURL: string): void {
 
