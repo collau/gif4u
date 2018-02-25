@@ -29,11 +29,12 @@ export class UserComponent implements OnInit {
 
     this.Gif4u.getUserGifs(this.retrieveGIF.value.username)
       .then((data) => {
-        console.log(data)
+        console.log(data);
 
-        for (const d of data.data) {
+        for (let d of data.data) {
           this.retrievedGIFs.push({
             url: data.url
           });
         }
+      });
 }
