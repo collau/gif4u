@@ -21,7 +21,8 @@ export class UserComponent implements OnInit {
 
   }
 
-  constructor(private Gif4u: Gif4uService) { }
+  constructor(private Gif4u: Gif4uService) {
+  }
 
   retrieveuserGIF() {
 
@@ -37,4 +38,5 @@ export class UserComponent implements OnInit {
           });
         }
       });
+  }
 }
