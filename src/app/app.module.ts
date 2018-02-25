@@ -12,14 +12,14 @@ import { SearchComponent } from './components/search/search.component';
 import { DisplayComponent } from './components/display/display.component';
 // import { GifsComponent } from './components/gifs.component';
 import { Gif4uService } from '../../gif4u.service';
-// import { UserComponent } from './components/user/user.component';
+import { UserComponent } from './components/user/user.component';
 import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
   { path: '', component: SearchComponent },
   { path: 'search', component: SearchComponent },
-  // { path: 'gif4u_web/gif4u', component: UserComponent },
-  // { path: 'gif4u_web/gif4u/**', component: UserComponent },
+  { path: 'gif4u_web/gif4u', component: UserComponent },
+  { path: 'gif4u_web/gif4u/**', component: UserComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
 
@@ -30,7 +30,7 @@ const routes: Routes = [
     SearchComponent,
     DisplayComponent,
     // GifsComponent,
-    // UserComponent,
+    UserComponent,
     HeaderComponent
   ],
   imports: [
