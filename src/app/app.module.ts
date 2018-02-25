@@ -9,7 +9,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
-import { DisplayComponent } from './components/display/display.component';
 import { Gif4uService } from '../../gif4u.service';
 import { UserComponent } from './components/user/user.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     SearchComponent,
-    DisplayComponent,
     UserComponent,
     HeaderComponent
   ],

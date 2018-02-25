@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Injectable, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Search} from './search';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Http, Response } from '@angular/http';
 import {GIF} from './GIF';
