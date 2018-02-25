@@ -1,14 +1,12 @@
-<form #retreiveGIF = "ngForm" (ngSubmit) = "search(text)">
+<form #retrieveGIF = "ngForm" (ngSubmit) = "retrieveuserGIF()">
 
   <div class = "form-group">
 
-    <label for="search" >Search GIFs here</label>
+    <label for="searchUser" >Enter UserID</label>
 
-    <input type="text" name = "search"  #text id = "search" required class = "form-control" placeholder = "Search GIFs..." ngModel>   <!-- [(ngModel)]="property" -->
+    <input type="text" name = "username"  #text id = "searchUser" required class = "form-control" placeholder = "Search User" ngModel>   <!-- [(ngModel)]="property" -->
 
-    <button type="submit" class = "btn btn-success form-control" [disabled]="searchGIFForm.invalid">Search</button>
-
-    <label>{{gifData.length}} results returned.</label>
+    <button type="submit" class = "btn btn-success form-control">Submit</button>
 
   </div>
 
@@ -16,14 +14,10 @@
 
 <div class="container" >
 
-  <div class = "row" style = "padding-bottom: 5px" *ngFor="let gif of gifData">
+  <div class = "row" style = "padding-bottom: 5px" *ngFor="let gif of retrievedGIFs">
       <div class = "col-sm-4" >
-        <img src="{{gif.images.fixed_width.url}}" class = "img-rounded img-responsive">
+        <img src="{{gif.url}}" class = "img-rounded img-responsive">
       </div>
-    <div class = "col-sm-4">
-      <input type = "text" name = "username" id = "username" #saveGIF placeholder="Enter Username to Save...">
-      <button type = "submit" class = "btn btn-success"  (click) = "addGIFToDatabase(saveGIF, gif.images.fixed_width.url )" >Save</button>
-    </div>
     <br/>
     <br/>
   </div>
